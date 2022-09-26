@@ -1,3 +1,5 @@
+import 'dart:math';
+
 // void main(List<String> arguments) {
 //   print('Hello world!');
 // }
@@ -457,18 +459,618 @@ import 'dart:io';
 // }
 
 // Example of capitalize first letter of String
-void main(){
-  String text = "hello world";
-  print("Capitalized first letter of String: ${text[0].toUpperCase()}${text.substring(1)}");
+// void main(){
+//   String text = "hello world";
+//   print("Capitalized first letter of String: ${text[0].toUpperCase()}${text.substring(1)}");
+// }
+
+// 2. Conditions in Dart
+
+// void main(){
+//   var age = 20;
+
+//   if(age >= 18){
+//     print("You are voter.");
+//   }
+// }
+
+// void main(){
+//   int age = 12;
+//   if(age >= 18){
+//     print("You are voter.");
+//   }else{
+//     print("You are not voter.");
+//   }
+// }
+
+// void main(){
+//   bool isMarried = false;
+//   if(isMarried){
+//     print("You are married.");
+//   }else{
+//     print("You are single.");
+//   }
+// }
+
+// void main(){
+//   int noOfMonth = 5;
+
+//   // Check the no of month
+//   if(noOfMonth == 1){
+//     print("The month is jan");
+//   }else if(noOfMonth == 2){
+//     print("The month is feb");
+//   }else if(noOfMonth == 3){
+//     print("The month is march");
+//   }else if(noOfMonth == 4){
+//     print("The month is april");
+//   }else if(noOfMonth == 5){
+//     print("The month is may");
+//   }else if(noOfMonth == 6){
+//     print("The month is june");
+//   }else if(noOfMonth == 7){
+//     print("The month is july");
+//   }else if(noOfMonth == 8){
+//     print("The month is aug");
+//   }else if(noOfMonth == 9){
+//     print("The month is sep");
+//   }else if(noOfMonth == 10){
+//     print("The month is oct");
+//   }else if(noOfMonth == 11){
+//     print("The month is nov");
+//   }else if(noOfMonth == 12){
+//     print("The month is dec");
+//   }else{
+//     print("Invalid option given.");
+//   }
+// }
+
+// void main(){
+//   int num1 = 1200;
+//   int num2 = 1000;
+//   int num3 = 150;
+
+//   if(num1 > num2 && num1 > num3){
+//     print("Num 1 is greater: i.e $num1");
+//   }
+//   if(num2 > num1 && num2 > num3){
+//     print("Num 2 is greater: i.e $num2");
+//   }
+//   if(num3 > num1 && num3 > num1){
+//     print("Num 3 is greater: i.e $num3");
+//   }
+// }
+
+// 2. Assert in Dart
+
+// It will not work with vscode unless you type the command "dart --enable-asserts file_name.dart".
+// void main(){
+//   var age = 22;
+//   assert(age!=22);
+// }
+
+// 2. Switch Case in Dart
+
+// void main(){
+//   var dayOfWeek = 5;
+//   if(dayOfWeek == 1){
+//     print("Day is Sunday.");
+//   }else if(dayOfWeek == 2){
+//     print("Day is Monday.");
+//   }else if(dayOfWeek == 2){
+//     print("Day is Monday.");
+//   }else if(dayOfWeek == 3){
+//     print("Day is Tuesday.");
+//   }else if(dayOfWeek == 4){
+//     print("Day is Wednesday.");
+//   }else if(dayOfWeek == 5){
+//     print("Day is Thursday.");
+//   }else if(dayOfWeek == 6){
+//     print("Day is Friday.");
+//   }else if(dayOfWeek == 7){
+//     print("Day is Saturday.");
+//   }else{
+//     print("Invalid Weekday.");
+//   }
+// }
+
+// void main(){
+//   var dayOfWeek = 5;
+//   switch(dayOfWeek){
+//     case 1:
+//       print("Day is Sunday.");
+//       break;
+//     case 2:
+//       print("Day is Monday.");
+//       break;
+//     case 3:
+//       print("Day is Tuesday.");
+//       break;
+//     case 4:
+//       print("Day is Wednesday.");
+//       break;
+//     case 5:
+//       print("Day is Thursday.");
+//       break;
+//     case 6:
+//       print("Day is Friday.");
+//       break;
+//     case 7:
+//       print("Day is Saturday.");
+//       break;
+//     default:
+//       print("Invaild Weekday.");
+//       break;
+//   }
+// }
+
+// void main(){
+//   const weather = "cloudy";
+
+//   switch(weather){
+//     case "sunny":
+//       print("Its a sunny day. Put sunscreen.");
+//       break;
+//     case "snowy":
+//       print("Get your skis.");
+//       break;
+//     case "cloudy":
+//     case "rainy":
+//       print("Please bring unbrella.");
+//       break;
+//     default:
+//       print("Sorry I am not familiar with such weather.");
+//       break;
+//   }
+// }
+
+// define enum outside main function
+enum Weather{sunny, snowy, cloudy, rainy}
+//main method
+// void main(){
+//   const weather = Weather.cloudy;
+
+//   switch(weather){
+//     case Weather.sunny:
+//       print("Its a sunny day. Put sunscreen.");
+//       break;
+//     case Weather.snowy:
+//       print("Get your skis.");
+//       break;
+//     case Weather.rainy:
+//     case Weather.cloudy:
+//       print("Please bring umbrella.");
+//       break;
+//     default:
+//       print("Sorry I am not fammiliar with such weather.");
+//       break;
+//   }
+// }
+
+// 2. Ternary Operator in Dart
+
+// void main(){
+//   int num1 = 10;
+//   int num2 = 15;
+//   int max = 0;
+//   if(num1 > num2){
+//     max = num1;
+//   }else{
+//     max = num2;
+//   }
+//   print("The greatest number is $max.");
+// }
+
+// void main(){
+//   int num1 = 10;
+//   int num2 = 15;
+//   int max = (num1 > num2) ? num1 : num2;
+//   print("The greatest number is $max.");
+// }
+
+// void main(){
+//   var selection = 2;
+//   var output = (selection == 2) ? "Apple" : "Banana";
+//   print(output);
+// }
+
+// void main(){
+//   var age = 18;
+//   var check = (age >= 18) ? "You are a voter." : "You are not a voter.";
+//   print(check);
+//   }
+
+// 2. Loops in Dart
+
+// void main(){
+//   print("John Doe");
+//   print("John Doe");
+//   print("John Doe");
+//   print("John Doe");
+//   print("John Doe");
+//   print("John Doe");
+//   print("John Doe");
+//   print("John Doe");
+//   print("John Doe");
+//   print("John Doe");
+// }
+
+// void main(){
+//   for(int i = 0; i < 10; i++){
+//     print("John Doe");
+//   }
+// }
+
+// 2. For Loop in Dart
+
+// void main(){
+//   for(int i = 1; i <= 10; i++){
+//     print(i);
+//   }
+// }
+
+// void main(){
+//   for(int i = 10; i >= 1; i--){
+//     print(i);
+//   }
+// }
+
+// void main(){
+//   for(int i = 0; i < 10; i++){
+//     print("John Doe");
+//   }
+// }
+
+// void main(){
+//   int total = 0;
+//   int n = 100; // change as per required
+
+//   for(int i = 1; i <= n; i++){
+//     total = total + i;
+//   }
+
+//   print("Total is $total");
+// }
+
+// void main(){
+//   for(int i = 50; i <= 100; i++){
+//     if(i % 2 == 0){
+//       print(i);
+//     }
+//   }
+// }
+
+// too dengerous
+// void main(){
+//   for(int i = 1; i >= 1; i++){
+//     print(i);
+//   }
+// }
+
+// For Each Loop in Dart
+
+// void main(){
+//   List<String> footballplayers = ["Ronaldo", "Messi", "Neymar", "Hazard"];
+//   footballplayers.forEach((names) => print(names));
+// }
+
+// void main(){
+//   List<int> numbers = [1,2,3,4,5];
+
+//   int total = 0;
+
+//   numbers.forEach((num) => total = total + num);
+
+//   print("Total is $total.");
+
+//   double avg = total / (numbers.length);
+
+//   print("Average is $avg.");
+// }
+
+// void main(){
+//   List<String> footballplayers = ["Ronaldo", "Messi", "Neymar", "Hazard"];
+
+//   for(String player in footballplayers){
+//     print(player);
+//   }
+// }
+
+// void main(){
+//   List<String> footballplayers = ["Ronaldo", "Messi", "Neymar", "Hazard"];
+
+//   footballplayers.asMap().forEach((index, value) => print("$value index is $index."));
+// }
+
+// void main(){
+//   String name = "John";
+
+//   for (var codePoint in name.runes){
+//     print("Unicode of ${String.fromCharCode(codePoint)} is $codePoint.");
+//   }
+// }
+
+// While Loop in Dart
+
+// void main(){
+//   int i = 1;
+//   while(i <= 10){
+//     print(i);
+//     i++;
+//   }
+// }
+
+// void main(){
+//   int i = 10;
+//   while(i >= 1){
+//     print(i);
+//     i--;
+//   }
+// }
+
+// void main(){
+//   int total = 0;
+//   int n = 100; // change as per required
+//   int i = 1;
+
+//   while(i <= n){
+//     total = total + i;
+//     i++;
+//   }
+
+//   print("Total is $total");
+// }
+
+// void main(){
+//   int i = 50;
+//   while(i <= 100){
+//     if(i % 2 == 0){
+//       print(i);
+//     }
+//     i++;
+//   }
+// }
+
+// Do While Loop in Dart
+
+// void main(){
+//   int i = 1;
+//   do{
+//     print(i);
+//     i++;
+//   }while(i <= 10);
+// }
+
+// void main(){
+//   int i = 10;
+//   do{
+//     print(i);
+//     i--;
+//   }while(i >= 1);
+// }
+
+// void main(){
+//   int total = 0;
+//   int n = 100; // change as per required
+//   int i = 1;
+
+//   do{
+//     total = total + i;
+//     i++;
+//   }while(i <= n);
+
+//   print("Total is $total");
+// }
+
+// void main(){
+//   int number = 0;
+
+//   do{
+//     print("Hello");
+//     number--;
+//   }while(number > 1);
+// }
+
+// Break and Continue in Dart
+
+// void main(){
+//   for(int i = 1; i <= 10; i++){
+//     if(i == 5){
+//       break;
+//     }
+//     print(i);
+//   }
+// }
+
+// void main(){
+//   for(int i = 10; i >= 1; i--){
+//     if(i == 7){
+//       break;
+//     }
+//     print(i);
+//   }
+// }
+
+// void main(){
+//   int i = 1;
+//   while(i <= 10){
+//     print(i);
+//     if(i == 5){
+//       break;
+//     }
+//     i++;
+//   }
+// }
+
+// void main(){
+//   var noOfMoneth = 5;
+//   switch(noOfMoneth){
+//     case 1:
+//       print("Selected month is January.");
+//       break;
+//     case 2:
+//       print("Selected month is February.");
+//       break;
+//     case 3:
+//       print("Selected month is March.");
+//       break;
+//     case 4:
+//       print("Selected month is April.");
+//       break;
+//     case 5:
+//       print("Selected month is May.");
+//       break;
+//     case 6:
+//       print("Selected month is June.");
+//       break;
+//     case 7:
+//       print("Selected month is July.");
+//       break;
+//     case 8:
+//       print("Selected month is August.");
+//       break;
+//     case 9:
+//       print("Selected month is September.");
+//       break;
+//     case 10:
+//       print("Selected month is October.");
+//       break;
+//     case 11:
+//       print("Selected month is November.");
+//       break;
+//     case 12:
+//       print("Selected month is December.");
+//       break;
+//     default:
+//       print("Invaild month.");
+//       break;
+//   }
+// }
+
+// void main(){
+//   for(int i = 1; i <= 10; i++){
+//     if(i == 5){
+//       continue;
+//     }
+//     print(i);
+//   }
+// }
+
+// void main(){
+//   for(int i = 10; i >= 1; i--){
+//     if(i == 4){
+//       continue;
+//     }
+//     print(i);
+//   }
+// }
+
+// void main(){
+//   int i = 1;
+//   while(i <= 10){
+//     if(i == 5){
+//       i++;
+//       continue;
+//     }
+//     print(i);
+//     i++;
+//   }
+// }
+
+// Exception Handling in Dart
+
+// void main(){
+//   int a = 18;
+//   int b = 0;
+//   int res;
+
+//   try{
+//     res = a ~/ b;
+//   }
+//   // It returns the built-in exception related to the occuring exception
+//   catch(ex){
+//     print(ex);
+//   }
+// }
+
+// void main(){
+//   int a = 12;
+//   int b = 0;
+//   int res;
+//   try{
+//     res = a ~/ b;
+//   }on UnsupportedError{
+//     print("Cannot divide by zero");
+//   }catch (ex){
+//     print(ex);
+//   }finally{
+//     print("Finally block always executed");
+//   }
+// }
+
+// void main(){
+//   try{
+//     check_accout(-10);
+//   }catch (e){
+//     print("The accout cannot be nagative");
+//   }
+// }
+
+// void check_accout(int amount){
+//   if(amount < 0){
+//     throw new FormatException(); // Raising explanation externally
+//   }
+// }
+
+// class MarkException implements Exception{
+//   String erroMessage(){
+//     return "Marks cannot be nagative value.";
+//   }
+// }
+
+// void main(){
+//   try{
+//     checkMarks(-20);
+//   }catch (ex){
+//     print(ex.toString());
+//   }
+// }
+
+// void checkMarks(int marks){
+//   if(marks < 0) throw MarkException().erroMessage();
+// }
+
+//custom exception class
+class NegativeSquareRootException implements Exception{
+  @override
+  String toStrign(){
+    return "Square root of negative number is not allowed here.";
+  }
 }
 
+// get square root of a positive numbe
+num squareRoot(int i){
+  if(i < 0){
+    // throw "NegativeSquareRootException" exception
+    throw NegativeSquareRootException;
+  }else{
+    return sqrt(i);
+  }
+}
 
+void main(){
+  try{
+    var result = squareRoot(-4);
 
-
-
-
-
-
+    print("result: $result");
+  }on NegativeSquareRootException catch (e){
+    print("Oops, Negative Numver: $e");
+  }catch(e){
+    print(e);
+  }finally{
+    print("Job Completed!");
+  }
+}
 
 
 

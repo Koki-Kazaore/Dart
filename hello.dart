@@ -1,3 +1,8 @@
+// void main(){
+//   print("Hello, Sir!");
+// }
+
 void main(){
-  print("Hello, Sir!");
+  var age = 22;
+  assert(age!=22);
 }

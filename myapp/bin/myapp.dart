@@ -625,7 +625,7 @@ import 'dart:io';
 // }
 
 // define enum outside main function
-enum Weather{sunny, snowy, cloudy, rainy}
+// enum Weather{sunny, snowy, cloudy, rainy}
 //main method
 // void main(){
 //   const weather = Weather.cloudy;
@@ -1041,36 +1041,369 @@ enum Weather{sunny, snowy, cloudy, rainy}
 // }
 
 //custom exception class
-class NegativeSquareRootException implements Exception{
-  @override
-  String toStrign(){
-    return "Square root of negative number is not allowed here.";
-  }
-}
+// class NegativeSquareRootException implements Exception{
+//   @override
+//   String toStrign(){
+//     return "Square root of negative number is not allowed here.";
+//   }
+// }
 
-// get square root of a positive numbe
-num squareRoot(int i){
-  if(i < 0){
-    // throw "NegativeSquareRootException" exception
-    throw NegativeSquareRootException;
-  }else{
-    return sqrt(i);
-  }
-}
+// // get square root of a positive numbe
+// num squareRoot(int i){
+//   if(i < 0){
+//     // throw "NegativeSquareRootException" exception
+//     throw NegativeSquareRootException;
+//   }else{
+//     return sqrt(i);
+//   }
+// }
 
-void main(){
-  try{
-    var result = squareRoot(-4);
+// void main(){
+//   try{
+//     var result = squareRoot(-4);
 
-    print("result: $result");
-  }on NegativeSquareRootException catch (e){
-    print("Oops, Negative Numver: $e");
-  }catch(e){
-    print(e);
-  }finally{
-    print("Job Completed!");
-  }
-}
+//     print("result: $result");
+//   }on NegativeSquareRootException catch (e){
+//     print("Oops, Negative Numver: $e");
+//   }catch(e){
+//     print(e);
+//   }finally{
+//     print("Job Completed!");
+//   }
+// }
+
+// 3. Functions in Dart
+
+// writing function outside main function.
+// void printName(){
+//   print("My name is Raj Sharma. I am from function.");
+// }
+// // this is our main function.
+// void main(){
+//   printName();
+// }
+
+// void add(int num1, int num2){
+//   int sum = num1 + num2;
+//   print("The sum is $sum");
+// }
+
+// void main(){
+//   add(10, 20);
+// }
+
+// function that calculate interest
+// void calculateInterest(double principal, double rate, double time){
+//   double interest = principal * rate * time / 100;
+//   print("Simple interest is $interest");
+// }
+
+// void main(){
+//   double principal = 5000;
+//   double time = 3;
+//   double rate = 3;
+//   calculateInterest(principal, rate, time);
+// }
+
+// 3. Types of Functions in Dart
+
+// void main(){
+//   printName("John");
+// }
+
+// void printName(String name){
+//   print("Welcom, $name.");
+// }
+
+// Function With No Parameter & Return Type
+// void main(){
+//   String name = primeMinisterName();
+//   print("The Name from function is $name.");
+// }
+
+// String primeMinisterName(){
+//   return "John Doe";
+// }
+
+// void main(){
+//   int personAge = 17;
+
+//   if(personAge >= voterAge()){
+//     print("You can vote.");
+//   }else{
+//     print("Soory, you can't vote.");
+//   }
+// }
+
+// int voterAge(){
+//   return 18;
+// }
+
+// this function add two numbers
+// int add(int a, int b){
+//   int sum = a + b;
+//   return sum;
+// }
+
+// void main(){
+//   int num1 = 10;
+//   int num2 = 20;
+
+//   int total = add(num1, num2);
+//   print("The sum is $total.");
+// }
+
+//function that calculate interest
+// double calculateInterest(double principal, double rate, double time){
+//   double interest = principal * rate * time / 100;
+//   return interest;
+// }
+
+// void main(){
+//   double principal = 5000;
+//   double time = 3;
+//   double rate = 3;
+//   double result = calculateInterest(principal, rate, time);
+//   print("The simple interest is $result.");
+// }
+
+// parameter and return type
+// int add(int a, int b){
+//   var total;
+//   total = a + b;
+//   return total;
+// }
+
+// // parameter and no return type
+// void mul(int a, int b){
+//   var total;
+//   total = a * b;
+//   print("Multiplication is : $total");
+// }
+
+// // no parameter and return type
+// String greet(){
+//   String greet = "Welcom";
+//   return greet;
+// }
+
+// // no parameter and no return type
+// void greetings(){
+//   print("Hello World!!!");
+// }
+
+// void main(){
+//   var total = add(2, 3);
+//   print("Total sum: $total");
+//   mul(2, 3);
+//   var greeting = greet();
+//   print("Greeting: $greeting");
+//   greetings();
+// }
+
+// 3.Function Parameter in Dart
+
+// void printInfo(String name, String gender){
+//   print("Hello $name your gender is $gender.");
+// }
+
+// void main(){
+//   // passing values in wrong order
+//   printInfo("Male", "John" );
+
+//   // passing values in correct order
+//   printInfo("John", "Male");
+// }
+
+// void printInfo(String name, String gender, [String title = "sir/myam"]){
+//   print("Hello $title $name your gender is $gender.");
+// }
+
+// void main(){
+//   printInfo("John", "Male");
+//   printInfo("John", "Male", "Mr.");
+//   printInfo("Kavya", "Female", "Ms.");
+// }
+
+// void add(int num1, int num2, [int num3 = 0]){
+//   int sum;
+//   sum = num1 + num2 + num3;
+
+//   print("The sum is $sum");
+// }
+
+// void main(){
+//   add(10, 20);
+//   add(10, 20, 30);
+// }
+
+// void printInfo({String ? name, String ? gender}){
+//   print("Heelo $name your gender is $gender.");
+// }
+
+// void main(){
+//   // you can pass values in any order in named parameters.
+//   printInfo(gender: "Male", name: "John");
+//   printInfo(name: "Sita", gender: "Female");
+//   printInfo(name: "Reecha", gender: "Female");
+//   printInfo(name: "Reecha", gender: "Female");
+//   printInfo(name: "Harry", gender: "Male");
+//   printInfo(gender: "Male", name: "Santa");
+// }
+
+// void printInfo({required String name, required String gender}){
+//   print("Hello $name your gender is $gender.");
+// }
+
+// void main(){
+//   // you can pass values in any order in named parameters.
+//   printInfo(gender: "Male", name: "John");
+//   printInfo(name: "Suju", gender: "Female");
+// }
+
+// void printInfo(String name, String gender, [String title = ""]){
+//   print("Hello, $title $name your gender is $gender.");
+// }
+
+// void main(){
+//   printInfo("John", "Male");
+//   printInfo("John", "Male", "Mr.");
+//   printInfo("Kavya", "Female", "Ms.");
+// }
+
+// 3. Anonymous Function in Dart
+
+// void main(){
+//   const fruits = ["Apple", "Mango", "Banana", "Orange"];
+
+//   fruits.forEach((fruit) {
+//     print(fruit);
+//   });
+// }
+
+// void main(){
+//   // Anonymous function
+//   var cube = (int number){
+//     return number * number * number;
+//   };
+
+//   print("The cube of 2 is ${cube(2)}");
+//   print("The cube of 3 is ${cube(3)}");
+// }
+
+// 3. Arrow Function in Dart
+
+// function that calculate interest
+// double calculateInterest(double principal, double rate, double time){
+//   double interest = principal * rate * time / 100;
+//   return interest;
+// }
+
+// void main(){
+//   double principal = 5000;
+//   double time = 3;
+//   double rate = 3;
+
+//   double result = calculateInterest(principal, rate, time);
+//   print("The simple interest is $result");
+// }
+
+// arrow function that calculate interest
+// double calculateInterest(double principal, double rate, double time) => principal * rate * time / 100;
+
+// void main(){
+//   double principal = 5000;
+//   double time = 3;
+//   double rate = 3;
+
+//   double result = calculateInterest(principal, rate, time);
+//   print("The simple interest is $result.");
+// }
+
+// int add(int n1, int n2) => n1 + n2;
+// int sub(int n1, int n2) => n1 - n2;
+// int mul(int n1, int n2) => n1 * n2;
+// double div(int n1, int n2) => n1 / n2;
+
+// void main(){
+//   int num1 = 100;
+//   int num2 = 30;
+
+//   print("The sum is ${add(num1, num2)}");
+//   print("The diff is ${sub(num1, num2)}");
+//   print("The mul is ${mul(num1, num2)}");
+//   print("The div is ${div(num1, num2)}");
+// }
+
+// 3. Scope in Dart
+
+// void main(){
+//   String text = "I am text inside main. Anyone can't acces me.";
+//   print(text);
+// }
+
+// String global = "A am Global. Anyone can access me.";
+// void main(){
+//   print(global);
+// }
+
+// Math in Dart
+
+// void main(){
+//   Random random = new Random();
+//   int randomNumber = random.nextInt(10); // from 0 to 9 included
+//   print("Generated Random Number Between 0 to 9: $randomNumber");
+
+//   int randomNumber2 = random.nextInt(10) + 1; // from 1 to 10 included
+//   print("Generated Random Number Between 1 to 10: $randomNumber2");
+// }
+
+// void main(){
+//   int min = 10;
+//   int max = 20;
+
+//   int randomunum = min + Random().nextInt((max + 1) - min);
+
+//   print("Generated Random number between $min and $max is: $randomunum");
+// }
+
+// void main(){
+//   double randomDouble = Random().nextDouble();
+//   bool randomBool = Random().nextBool();
+
+//   print("Generated Random double value is: $randomDouble");
+//   print("Generated Random bool value is: $randomBool");
+// }
+
+// void main(){
+//   List<int> randomList = List.generate(10, (_) => Random().nextInt(100) + 1);
+//   print(randomList);
+// }
+
+// void main(){
+//   int num1 = 10;
+//   int num2 = 2;
+
+//   num powernum = pow(num1, num2);
+//   num maxnum = max(num1, num2);
+//   num minnum = min(num1, num2);
+//   num squarteroot = sqrt(25); // Square root of 25
+
+//   print("Power is $powernum");
+//   print("Maximum is $maxnum");
+//   print("Minimum is $minnum");
+//   print("Square root is $squarteroot");
+// }
+
+
+
+
+
+
+
+
+
+
 
 
 

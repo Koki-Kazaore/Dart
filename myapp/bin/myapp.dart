@@ -1395,24 +1395,412 @@ import 'dart:io';
 //   print("Square root is $squarteroot");
 // }
 
+// 4. Collection in Dart
+// 4. List in Dart
 
+// void main(){
+//   var list = List<int>.filled(5, 0);
+//   print(list);
+// }
 
+// void main(){
+//   var list1 = [210, 21, 22, 33, 44, 55];
+//   print(list1);
+// }
 
+// void main(){
+//   var list = [210, 21, 22, 33, 44, 55];
 
+//   print(list[0]);
+//   print(list[1]);
+//   print(list[2]);
+//   print(list[3]);
+//   print(list[4]);
+//   print(list[5]);
+// }
 
+// void main(){
+//   var list = [210, 21, 22, 33, 44, 55];
 
+//   print(list.indexOf(22));
+//   print(list.indexOf(33));
+// }
 
+// void main(){
+//   List<String> names = ["Raj", "John", "Rocky"];
+//   print(names.length);
+// }
 
+// void main(){
+//   List<String> names = ["Raj", "John", "Rocky"];
+//   names[1] = "Bill";
+//   names[2] = "Elon";
+//   print(names);
+// }
 
+// void main(){
+//   List<String> drinks = ["water", "juice", "milk", "coke"];
+//   print("First element of the List is: ${drinks.first}");
+//   print("Last element of the List is: ${drinks.last}");
+// }
 
+// void main(){
+//   List<String> drinks = ["water", "juice", "milk", "coke"];
+//   List<int> ages = [];
+//   print("Is drinks Empty: "+drinks.isEmpty.toString());
+//   print("Is drinks not Empty: "+drinks.isNotEmpty.toString());
+//   print("Is ages Empty: "+ages.isEmpty.toString());
+//   print("Is ages not Empty: "+ages.isNotEmpty.toString());
+// }
 
+// void main(){
+//   List<String> drinks = ["water", "juice", "milk", "coke"];
+//   print("List in reverse: ${drinks.reversed}");
+// }
 
+// void main(){
+//   var evenList = [2,4,6,8,10];
+//   print(evenList);
+//   evenList.add(12);
+//   print(evenList);
+// }
 
+// void main(){
+//   var evenList = [2,4,6,8,10];
+//   print(evenList);
+//   evenList.addAll([12,14,16,18]);
+//   print(evenList);
+// }
 
+// void main(){
+//   List myList = [3,4,2,5];
+//   print(myList);
+//   myList.insert(2, 15);
+//   print(myList);
+// }
 
+// void main(){
+//   var myList = [3,4,2,5];
+//   print(myList);
+//   myList.insertAll(1, [6,7,10,9]);
+//   print(myList);
+// }
 
+// void main(){
+//   var list = [10, 15, 20, 25, 30];
+//   print("List before updation: $list");
+//   list.replaceRange(0, 4, [5,6,7,8]);
+//   print("List after updation using replaceAll() function : $list");
+// }
 
+// void main(){
+//   var list = [10, 20, 30, 40, 50];
+//   print("List before removing element : $list");
+//   list.remove(30);
+//   print("List after removing element : $list");
+// }
 
+// void main(){
+//   var list = [10, 11, 12, 13, 14];
+//   print("List before removing element : $list");
+//   list.removeAt(3);
+//   print("List after removing element : $list");
+// }
+
+// void main(){
+//   var list = [10, 20, 30, 40, 50];
+//   print("List before removing element:$list");
+//   list.removeLast();
+//   print("List after removing last element:$list");
+// }
+
+// void main(){
+//   var list = [10, 20, 30, 40, 50];
+//   print("List before removing element:$list");
+//   list.removeRange(0, 3);
+//   print("List after removing element:$list");
+// }
+
+// void main(){
+//   List<int> list = [10, 20, 30, 40, 50];
+//   list.forEach((n) => print(n));
+// }
+
+// void main(){
+//   List<int> list = [10, 20, 30, 40, 50];
+//   var doubledList = list.map((n) => n * 2);
+
+//   print(doubledList);
+// }
+
+// void main(){
+//   List<String> names = ["Raj", "John", "Rocky"];
+//   List<String> names2 = ["Mike", "Subash", "Mark"];
+
+//   List<String> allNames = [...names, ...names2];
+//   print(allNames);
+//   List<String> allNames2 = names + names2;
+//   print(allNames2);
+// }
+
+// void main(){
+//   bool sad = false;
+//   var cart = ["milk", "ghee", if(sad) "Beer"];
+//   print(cart);
+// }
+
+// void main(){
+//   List<int> numbers = [2,4,6,8,10,11,12,13,14];
+
+//   List<int> even = numbers.where((number) => number.isEven).toList();
+//   print(even);
+// }
+
+// 4. Set in Dart
+
+// void main(){
+//   Set<String> fruits = {"Apple", "Orange", "Mango"};
+//   print(fruits);
+// }
+
+// void main(){
+//   // declaring fruits as Set
+//   Set<String> fruits = {"Apple", "Orange", "Mango", "Banana"};
+
+//   // using different properties of Set
+//   print("First Value is ${fruits.first}");
+//   print("Last Value is ${fruits.last}");
+//   print("Is fruits empty? ${fruits.isEmpty}");
+//   print("Is fruits not empty? ${fruits.isNotEmpty}");
+//   print("The length fo fruits is ${fruits.length}");
+// }
+
+// void main(){
+//   Set<String> fruits = {"Apple", "Orange", "Mango"};
+//   print(fruits.contains("Mango"));
+//   print(fruits.contains("Lemon"));
+// }
+
+// void main(){
+//   Set<String> fruits = {"Apple", "Orange", "Mango"};
+
+//   fruits.add("Lemon");
+//   fruits.add("Grape");
+
+//   print("After Adding Lemon and Grape: $fruits");
+
+//   fruits.remove("Apple");
+//   print("After Removing Apple: $fruits");
+// }
+
+// void main(){
+//   Set<int> numbers = {10, 20, 30};
+//   numbers.addAll([40, 50]);
+//   print("After adding 40 and 50: $numbers");
+// }
+
+// void main(){
+//   Set<String> fruits = {"Apple", "Orange", "Mango"};
+
+//   for(String fruits in fruits){
+//     print(fruits);
+//   }
+// }
+
+// void main(){
+//   Set<String> fruits = {"Apple", "Orange", "Mango"};
+//   // to clear all items
+//   fruits.clear();
+
+//   print(fruits);
+// }
+
+// void main(){
+//   Set<String> fruits1 = {"Apple", "Orange", "Mango"};
+//   Set<String> fruits2 = {"Apple", "Grapes", "Banana"};
+
+//   final differenceSet = fruits1.difference(fruits2);
+
+//   print(differenceSet);
+// }
+
+// void main(){
+//   Set<String> days = {"Sunday", "Monday", "Tuesday"};
+//   // index starts from 0 to 2 means Tuesday
+//   print(days.elementAt(2));
+// }
+
+// void main(){
+//   Set<String> fruits1 = {"Apple", "Orange", "Mango"};
+//   Set<String> fruits2 = {"Apple", "Grapes", "Banana"};
+
+//   final intersectionSet = fruits1.intersection(fruits2);
+
+//   print(intersectionSet);
+// }
+
+// 4. Map in Dart
+
+// void main(){
+//   Map<String, String> counteryCaptital = {
+//     "USA": "Washington, D.C.",
+//     "India": "New Dwlhi",
+//     "China": "Beijing"
+//   };
+//   print(counteryCaptital);
+// }
+
+// void main(){
+//   Map<String, String> counteryCaptital = {
+//     "USA": "Washington, D.C.",
+//     "India": "New Dwlhi",
+//     "China": "Beijing"
+//   };
+//   print(counteryCaptital["USA"]);
+// }
+
+// void main(){
+//   Map<String, double> expenses = {
+//     "sun": 3000.0,
+//     "mon": 3000.0,
+//     "tue": 3234.0,
+//   };
+
+//   print("All keys of Map: ${expenses.keys}");
+//   print("All values of Map: ${expenses.values}");
+//   print("Is Map empty: ${expenses.isEmpty}");
+//   print("Is Map not empty: ${expenses.isNotEmpty}");
+//   print("Length of map is: ${expenses.length}");
+// }
+
+// void main(){
+//   Map<String, String> countryCapital = {
+//     "USA": "Washington, D.C.",
+//     "India": "New Delhi",
+//     "China": "Beijing"
+//   };
+//   // Adding New Item
+//   countryCapital["Japan"] = "Tokio";
+//   print(countryCapital);
+// }
+
+// void main(){
+//   Map<String, String> countryCapital = {
+//     "USA": "Nothing",
+//     "India": "New Delhi",
+//     "China": "Beijing"
+//   };
+//   // Updating Item
+//   countryCapital["USA"] = "Washington, D.C.";
+//   print(countryCapital);
+// }
+
+// void main(){
+//   Map<String, double> expenses = {
+//     "sun": 3000.0,
+//     "mon": 3000.0,
+//     "tue": 3234.0,
+//   };
+
+//   // Without List
+//   print("All keys of Map: ${expenses.keys}");
+//   print("All values of Map: ${expenses.values}");
+
+//   // With List
+//   print("All keys of Map with List: ${expenses.keys.toList()}");
+//   print("All values of Map with List: ${expenses.values.toList()}");
+// }
+
+// void main(){
+//   Map<String, double> expenses = {
+//     "sun": 3000.0,
+//     "mon": 3000.0,
+//     "tue": 3234.0,
+//   };
+
+//   // For Keys
+//   print("Does Map contain key sun: ${expenses.containsKey("sun")}");
+//   print("Does Map contain key abe: ${expenses.containsKey("abc")}");
+
+//   // For values
+//   print("Does Map contain value 3000.0: ${expenses.containsValue(3000.0)}");
+//   print("Does Map contain value 100.0: ${expenses.containsValue(100.0)}");
+// }
+
+// void main(){
+//   Map<String, String> countryCapital = {
+//     "USA": "Nothing",
+//     "India": "New Delhi",
+//     "China": "Beijing"
+//   };
+
+//   countryCapital.remove("USA");
+//   print(countryCapital);
+// }
+
+// void main(){
+//   Map<String, dynamic> book = {
+//     "title": "Misson Mangal", 
+//     "author": "Kuber Singh",
+//     "page": 233
+//   };
+
+//   // Loop Through Map
+//   for(MapEntry book in book.entries){
+//     print("Key is ${book.key}, value ${book.value}");
+//   }
+// }
+
+// void main(){
+//   Map<String, double> mathMarks = {
+//     "ranm": 30,
+//     "mark": 32,
+//     "harry": 88,
+//     "raj": 69,
+//     "john": 15,
+//   };
+//   mathMarks.removeWhere((key, value) => value < 32);
+//   print(mathMarks);
+// }
+
+// Where in Dart
+
+// void main(){
+//   List<int> numbers = [2,4,6,8,10,11,12,13,14];
+
+//   List<int> oddNumbers = numbers.where((number) => number.isOdd).toList();
+//   print(oddNumbers);
+// }
+
+// void main(){
+//   List<String> days = [
+//     "Sunday",
+//     "Monday",
+//     "Tuesday",
+//     "Wednesday",
+//     "Thursday",
+//     "Friday",
+//     "Saturday"
+//   ];
+
+//   List<String> startWithS = days.where((element) => element.startsWith("S")).toList();
+
+//   print(startWithS);
+// }
+
+// void main(){
+//   Map<String, double> mathMarks = {
+//     "ram": 30,
+//     "mark": 32,
+//     "harry": 88,
+//     "raj": 69,
+//     "john": 15,
+//   };
+
+//   mathMarks.removeWhere((key, value) => value < 32);
+
+//   print(mathMarks);
+// }
 
 
 

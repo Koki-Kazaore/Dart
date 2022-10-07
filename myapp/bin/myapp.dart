@@ -1,4 +1,4 @@
-import 'dart:math';
+import 'dart:convert';
 
 // void main(List<String> arguments) {
 //   print('Hello world!');
@@ -332,6 +332,7 @@ import 'dart:math';
 
 // User Input in Dart
 
+import 'dart:convert';
 import 'dart:io';
 
 // void main(){
@@ -1972,35 +1973,613 @@ import 'dart:io';
 //   print('Area of rectangle is ${rectangle.area()}');
 // }
 
-class SimpleInterest{
-  // properties of simple interest
-  double? principal;
-  double? rate;
-  double? time;
+// class SimpleInterest{
+//   // properties of simple interest
+//   double? principal;
+//   double? rate;
+//   double? time;
 
-  // functions of simple interest
-  double interest(){
-    return (principal! * rate! * time!) / 100;
-  }
-}
+//   // functions of simple interest
+//   double interest(){
+//     return (principal! * rate! * time!) / 100;
+//   }
+// }
 
-void main(){
-  // object of simple interest created
-  SimpleInterest simpleInterest = SimpleInterest();
+// void main(){
+//   // object of simple interest created
+//   SimpleInterest simpleInterest = SimpleInterest();
 
-  // setting properties of simple interest
-  simpleInterest.principal = 1000;
-  simpleInterest.rate = 10;
-  simpleInterest.time = 2;
+//   // setting properties of simple interest
+//   simpleInterest.principal = 1000;
+//   simpleInterest.rate = 10;
+//   simpleInterest.time = 2;
 
-  // functions of simple interest called
-  print('Simple Interest is ${simpleInterest.interest()}');
-}
+//   // functions of simple interest called
+//   print('Simple Interest is ${simpleInterest.interest()}');
+// }
 
+// 5. Constructor in Dart
 
+// class Student{
+//   String? name;
+//   int? age;
+//   int? rollNumber;
 
+//   // Constructor
+//   Student(String name, int age, int rollNumber){
+//     print('Constructor called'); // this is for checking the construntor is called or not.
+//     this.name = name;
+//     this.age = age;
+//     this.rollNumber = rollNumber;
+//   }
+// }
 
+// void main(){
+//   // Here student is object of class Student.
+//   Student student = Student('John', 20, 1);
+//   print('Name: ${student.name}');
+//   print('Age: ${student.age}');
+//   print('Roll Number: ${student.rollNumber}');
+// }
 
+// class Teacher{
+//   String? name;
+//   int? age;
+//   String? subject;
+//   double? salary;
+
+//   // Constructor
+//   Teacher(String name, int age, String subject, double salary){
+//     this.name = name;
+//     this.age = age;
+//     this.subject = subject;
+//     this.salary = salary;
+//   }
+//   // Method
+//   void display(){
+//     print('Name: ${this.name}');
+//     print('Age: ${this.age}');
+//     print('Subject: ${this.subject}');
+//     print('Salary: ${this.salary}\n'); // \n is used for new line
+//   }
+// }
+
+// void main(){
+//   // Creating teacher1 object of class Teacher
+//   Teacher teacher1 = Teacher('John', 30, 'Math', 50000.0);
+//   teacher1.display();
+
+//   // Creating teacher2 object of class Teacher
+//   Teacher teacher2 = Teacher('Smith', 35, 'Science', 60000.0);
+//   teacher2.display();
+// }
+
+// class Car{
+//   String? name;
+//   double? prize;
+
+//   // Constructor
+//   Car(String name, double prize){
+//     this.name = name;
+//     this.prize = prize;
+//   }
+
+//   // Method
+//   void display(){
+//     print('Name: ${this.name}');
+//     print('Prize: ${this.prize}');
+//   }
+// }
+
+// void main(){
+//   // Here car is object of class Car
+//   Car car = Car('BMW', 500000.0);
+//   car.display();
+// }
+
+// class Staff{
+//   String? name;
+//   int? phone1;
+//   int? phone2;
+//   String? subject;
+
+//   // Constructor
+//   Staff(String name, int phone1, String subject){
+//     this.name = name;
+//     this.phone1 = phone1;
+//     this.subject = subject;
+//   }
+
+//   // Method
+//   void display(){
+//     print('Name: ${this.name}');
+//     print("Phone1: ${this.phone1}");
+//     print('Phone2: ${this.phone2}');
+//     print('Subject: ${this.subject}');
+//   }
+// }
+
+// void main(){
+//   // Here staff is object of class Staff.
+//   Staff staff = Staff('John', 1234567890, 'Maths');
+//   staff.display();
+// }
+
+// class Person{
+//   String? name;
+//   int? age;
+//   String? subject;
+//   double? salary;
+
+//   // Constructor in short form
+//   Person(this.name, this.age, this.subject, this.salary);
+
+//   // display method
+//   void display(){
+//     print('Name: ${this.name}');
+//     print('Age: ${this.age}');
+//     print("Subject: ${this.subject}");
+//     print("Salary: ${this.salary}");
+//   }
+// }
+
+// void main(){
+//   Person person = Person('John', 30, 'Maths', 50000.0);
+//   person.display();
+// }
+
+// class Employee{
+//   String? name;
+//   int? age;
+//   String? subject;
+//   double? salary;
+
+//   // Constrructor
+//   Employee(this.name, this.age, [this.subject = 'N/A', this.salary = 0]);
+
+//   // Method
+//   void display(){
+//     print('Name: ${this.name}');
+//     print('Age: ${this.age}');
+//     print("Subject: ${this.subject}");
+//     print('Salary: ${this.salary}');
+//   }
+// }
+
+// void main(){
+//   Employee employee = Employee('John', 30);
+//   employee.display();
+// }
+
+// class Chair{
+//   String? name;
+//   String? color;
+
+//   // Constructor
+//   Chair({this.name, this.color});
+
+//   // Method
+//   void display(){
+//     print('Name: ${this.name}');
+//     print('Color: ${this.color}');
+//   }
+// }
+
+// void main(){
+//   Chair chair = Chair(name: 'Chair1', color: 'Red');
+//   chair.display();
+// }
+
+// class Table{
+//   String? name;
+//   String? color;
+
+//   // Constructor
+//   Table({this.name = 'Table1', this.color = 'White'});
+
+//   // Method
+//   void display(){
+//     print('Name: ${this.name}');
+//     print('Color: ${this.color}');
+//   }
+// }
+
+// void main(){
+//   Table table = Table();
+//   table.display();
+// }
+
+// 5. Default Constructor in Dart
+
+// class Laptop{
+//   String? brand;
+//   int? prize;
+
+//   // Constructor
+//   Laptop(){
+//     print('This is a default constructor');
+//   }
+// }
+
+// void main(){
+//   // Here laptop is object of class Laptop.
+//   Laptop laptop = Laptop();
+// }
+
+// class Student{
+//   String? name;
+//   int? age;
+//   String? schoolname;
+//   String? grade;
+
+//   // Default Constructor
+//   Student(){
+//     print('Constructor called'); // this is for checking the constructor is called or not.
+//     schoolname = 'ABC School';
+//   }
+// }
+
+// void main(){
+//   // Here student is object of class Student.
+//   Student student = Student();
+//   student.name = 'John';
+//   student.age = 10;
+//   student.grade = 'A';
+//   print('Name: ${student.name}');
+//   print('Age: ${student.age}');
+//   print('School Name: ${student.schoolname}');
+//   print('Grade: ${student.grade}');
+// }
+
+// Parameterized Constrructor in Dart
+
+// class Student{
+//   String? name;
+//   int? age;
+//   int? rollNumber;
+//   // Constructor
+//   Student(this.name, this.age, this.rollNumber);
+// }
+
+// void main(){
+//   // Here student is object of class Student.
+//   Student student = Student('John', 20, 1);
+//   print('Name: ${student.name}');
+//   print("Age: ${student.age}");
+//   print('Roll Number: ${student.rollNumber}');
+// }
+
+// class Student{
+//   String? name;
+//   int? age;
+//   int? rollNumber;
+
+//   // Constructor
+//   Student({String? name, int? age, int? rollnumber}){
+//     this.name = name;
+//     this.age = age;
+//     this.rollNumber = rollnumber;
+//   }
+// }
+
+// void main(){
+//   // Here student is object of class Student.
+//   Student student = Student(name: 'John', age: 20, rollnumber: 1);
+//   print('Name: ${student.name}');
+//   print('Age: ${student.age}');
+//   print("Roll Number: ${student.rollNumber}");
+// }
+
+// class Student{
+//   String? name;
+//   int? age;
+
+//   // Constructor
+//   Student({String? name = 'John', int? age = 0}){
+//     this.name = name;
+//     this.age = age;
+//   }
+// }
+
+// void main(){
+//   // Here student is object of class Student.
+//   Student student = Student();
+//   print("Name: ${student.name}");
+//   print("Age: ${student.age}");
+// }
+
+// 5. Named Constructor in Dart
+
+// class Student{
+//   String? name;
+//   int? age;
+//   int? rollNumber;
+
+//   // Default Constructor
+//   Student(){
+//     print('This is a default constructor');
+//   }
+
+//   // Named Constructor
+//   Student.namedConstructor(String name, int age, int rollNumber){
+//     this.name = name;
+//     this.age = age;
+//     this.rollNumber = rollNumber;
+//   }
+// }
+
+// void main(){
+//   // Here student is object of class Student.
+//   Student student1 = Student();
+//   Student student = Student.namedConstructor('John', 20, 1);
+//   print('Name: ${student.name}');
+//   print('Age: ${student.age}');
+//   print('Roll Number: ${student.rollNumber}');
+// }
+
+// class Mobile{
+//   String? name;
+//   String? color;
+//   int? prize;
+
+//   Mobile(this.name, this.color, this.prize);
+//   // here Moblie() is a named constructor
+//   Mobile.namedConstructor(this.name, this.color, [this.prize = 0]);
+
+//   void displayMobileDetails(){
+//     print('Mobile name: $name.');
+//     print('Mobile color: $color');
+//     print('Mobile prize: $prize');
+//   }
+// }
+
+// void main(){
+//   var mobile1 = Mobile('Samsung', 'Black', 20000);
+//   mobile1.displayMobileDetails();
+//   var mobile2 = Mobile.namedConstructor('Apple', 'White');
+//   mobile2.displayMobileDetails();
+// }
+
+// class Animal{
+//   String? name;
+//   int? age;
+
+//   // Default Constructor
+//   Animal(){
+//     print('This is a default constructor');
+//   }
+
+//   // Named Constructor
+//   Animal.namedConstructor(String name, int age){
+//     this.name = name;
+//     this.age = age;
+//   }
+
+//   // Named Constructor
+//   Animal.namedCondtructor2(String name){
+//     this.name = name;
+//   }
+// }
+
+// void main(){
+//   // Here animal is object of class Animal.
+//   Animal animal = Animal.namedConstructor('Dog', 5);
+//   print('Name: ${animal.name}');
+//   print('Age: ${animal.age}');
+
+//   Animal animal2 = Animal.namedCondtructor2('Cat');
+//   print('Name: ${animal2.name}');
+// }
+
+// class Person{
+//   String? name;
+//   int? age;
+
+//   Person(this.name, this.age);
+
+//   Person.fromJson(Map<String, dynamic> json){
+//     name = json['name'];
+//     age = json['age'];
+//   }
+
+//   Person.fromJsonString(String jsonString){
+//     Map<String, dynamic> json = jsonDecode(jsonString);
+//     name = json['name'];
+//     age = json['age'];
+//   }
+// }
+
+// void main(){
+//   // Here person is object of class Person.
+//   String jsonString1 = '{"name": "Bishworaj", "age": 25}';
+//   String jsonString2 = '{"name": "John", "age": 30}';
+
+//   Person p1 = Person.fromJsonString(jsonString1);
+//   print('Person 1 name: ${p1.name}');
+//   print('Person 1 age: ${p1.age}');
+
+//   Person p2 = Person.fromJsonString(jsonString2);
+//   print('Person 2 name: ${p2.name}');
+//   print("Person 2 age: ${p2.age}");
+
+//   Person p3 = Person('Koki', 22);
+//   print('Person 3 name: ${p3.name}');
+//   print("Person 3 age: ${p3.age}");
+
+//   Map<String, dynamic> json4 = jsonDecode(jsonString1);
+//   Person p4 = Person.fromJson(json4);
+//   print('Person 4 name: ${p4.name}');
+//   print("Person 4 age: ${p4.age}");
+//   print(json4);
+// }
+
+// 5.Constant Constructor in Dart
+
+// class Point {
+//   final int x;
+//   final int y;
+  
+//   const Point(this.x, this.y);
+// }
+
+// void main(){
+//   // p1 and p2 has the same hash code.
+//   Point p1 = const Point(1, 2);
+//   print("The p1 hash code is: ${p1.hashCode}");
+
+//   Point p2 = const Point(1, 2);
+//   print("The p2 hash code is: ${p2.hashCode}");
+//   // without using const
+//   // this has different hash code.
+//   Point p3 = const Point(2, 2);
+//   print("The p3 hash code is: ${p3.hashCode}");
+
+//   Point p4 = const Point(2, 2);
+//   print("The p4 hash code is: ${p4.hashCode}");
+// }
+
+// class Car{
+//   final String? name;
+//   final String? model;
+//   final int? prize;
+
+//   // Constant Constructor
+//   const Car({this.name, this.model, this.prize});
+// }
+
+// void main(){
+//   // Here car is object of class Car.
+//   const Car car = Car(name: "BMW", model: "X5", prize: 50000);
+//   print('Name: ${car.name}');
+//   print('Model: ${car.model}');
+//   print("Prize: ${car.prize}");
+
+//   const Car car1= Car(name: "BMW", model: "X5", prize: 80000);
+//   print('Name: ${car1.name}');
+//   print('Model: ${car1.model}');
+//   print("Prize: ${car1.prize}");
+// }
+
+// 5. Encapsulation in Dart
+
+// class Employee{
+//   // Private properties
+//   int? _id;
+//   String? _name;
+
+//   // Getter method to access private property _id
+//   int getId(){
+//     return _id!;
+//   }
+//   // Getter method to access private property _name
+//   String getName(){
+//     return _name!;
+//   }
+//   // Setter method to update private property _id
+//   void setId(int id){
+//     this._id = id;
+//   }
+//   // Setter method to update private property _name
+//   void setName(String name){
+//     this._name = name;
+//   }
+// }
+
+// void main(){
+//   // Create an object of Employee class
+//   Employee emp = new Employee();
+//   // setting values to the object using setter
+//   emp.setId(1);
+//   emp.setName('John');
+
+//   // Retrieve the values of the object using getter
+//   print('Id: ${emp.getId()}');
+//   print('Name: ${emp.getName()}');
+// }
+
+// class Employee{
+//   // Private property
+//   var _name;
+
+//   // Gertter method to access private property _name
+//   String getName(){
+//     return _name;
+//   }
+
+//   // Setter method to update private property _name
+//   void setName(String name){
+//     this._name = name;
+//   }
+// }
+
+// void main(){
+//   var employee = Employee();
+//   employee.setName('Jack');
+//   print(employee.getName());
+// }
+
+// class Employee {
+//   // Private property
+//   var _name;
+
+//   // Getter method to access private property _name
+//   String getName(){
+//     return _name;
+//   }
+
+//   // Setter method to update private property _name
+//   void setName(String name){
+//     this._name = name;
+//   }
+// }
+
+// void main(){
+//   var employee = Employee();
+//   employee._name = 'John'; // It is working, but why?
+//   print(employee.getName());
+// }
+
+// class Student{
+//   final _schoolname = 'ABC School';
+
+//   String getSchoolNmae(){
+//     return _schoolname;
+//   }
+// }
+
+// void main(){
+//   var student = Student();
+//   print(student.getSchoolNmae());
+//   // This is not possible
+//   // student._schoolname = "XYZ School";
+// }
+
+// class Vehicle{
+//   String _model;
+//   int _year;
+
+//   // Getter method
+//   String get model => _model;
+
+//   // Setter method
+//   set model(String model) => _model = model;
+
+//   // Getter method
+//   int get year => _year;
+
+//   // Setter method
+//   set year(int year) => _year = year;
+// }
+
+// void main(){
+//   var vehicle = Vehicle();
+//   vehicle.model = 'Toyota';
+//   vehicle.year = 2019;
+//   print(vehicle.model);
+//   print(vehicle.year);
+// }
+
+// 5. Getter in Dart
 
 
 
